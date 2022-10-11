@@ -130,13 +130,13 @@ class RippleEffectState extends State<RippleEffect> with SingleTickerProviderSta
 
 /// RipplePainter
 class _RipplePainter extends CustomPainter {
-  final Offset? offset;
-  final double? rippleRadius;
+  final Offset offset;
+  final double rippleRadius;
   final Color fillColor;
 
   const _RipplePainter({
-    this.offset,
-    this.rippleRadius,
+    required this.offset,
+    required this.rippleRadius,
     required this.fillColor,
   });
 
@@ -145,7 +145,7 @@ class _RipplePainter extends CustomPainter {
     var paint = Paint()
       ..color = fillColor
       ..isAntiAlias = true;
-    canvas.drawCircle(offset!, rippleRadius!, paint);
+    canvas.drawCircle(offset, rippleRadius, paint);
   }
 
   @override
